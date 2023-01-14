@@ -2,9 +2,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
 import { AiFillCloseCircle } from "react-icons/ai"
-import { FaUserCircle } from "react-icons/fa"
 import { HiMenu } from "react-icons/hi"
-import SideBar from "./Sidebar"
+import SideBar from "./SideBar"
 import Logo from "../assets/logo.png"
 
 function Layout() {
