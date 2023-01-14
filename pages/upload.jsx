@@ -76,10 +76,10 @@ function Upload() {
           _type: "image",
           asset: { _type: "reference", _ref: imageAssets?._id },
         },
-        userId: user.sub,
+        userId: user?._id,
         postedBy: {
           _type: "postedBy",
-          _ref: user.sub,
+          _ref: user?._id,
         },
       }
       client.create(doc).then(() => {

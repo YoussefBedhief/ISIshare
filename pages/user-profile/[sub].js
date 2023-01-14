@@ -38,6 +38,7 @@ function Profile() {
   useEffect(() => {
     if (text === "Created") {
       const createdPictureQuery = userCreatedPinsQuery(userId)
+      console.log(createdPictureQuery)
       client.fetch(createdPictureQuery).then((data) => {
         setPicture(data)
       })
