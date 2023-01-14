@@ -93,7 +93,7 @@ function Detail() {
               <Image
                 className="rounded-t-3xl rounded-b-lg"
                 src={
-                  pictureDetails?.image && urlFor(pictureDetails.image).url()
+                  pictureDetails?.image && urlFor(pictureDetails?.image).url()
                 }
                 alt="picture"
                 height={400}
@@ -115,38 +115,40 @@ function Detail() {
               </div>
               <div className="text-center">
                 <h1 className="text-4xl font-bold break-words mt-3">
-                  {pictureDetails.title}
+                  {pictureDetails?.title}
                 </h1>
-                <p className="mt-3">{pictureDetails.about}</p>
+                <p className="mt-3">{pictureDetails?.about}</p>
               </div>
               <Link
                 href={`/user-profile/${pictureDetails?.postedBy?._id}`}
                 className="flex gap-2 mt-5 items-center bg-white rounded-lg "
               >
                 <Image
-                  src={pictureDetails?.postedBy.image}
+                  src={pictureDetails?.postedBy?.image}
                   className="w-10 h-10 rounded-full"
                   alt="user-profile"
                   height={400}
                   width={400}
                 />
-                <p className="font-bold">{pictureDetails?.postedBy.userName}</p>
+                <p className="font-bold">
+                  {pictureDetails?.postedBy?.userName}
+                </p>
               </Link>
               <h2 className="mt-5 text-2xl">Comments</h2>
               <div className="max-h-370 overflow-y-auto">
                 {pictureDetails?.comments?.map((item) => (
                   <div
                     className="flex gap-2 mt-5 items-center bg-white rounded-lg"
-                    key={item.comment}
+                    key={item?.comment}
                   >
                     <img
-                      src={item.postedBy?.image}
+                      src={item?.postedBy?.image}
                       className="w-10 h-10 rounded-full cursor-pointer"
                       alt="user-profile"
                     />
                     <div className="flex flex-col">
-                      <p className="font-bold">{item.postedBy?.userName}</p>
-                      <p>{item.comment}</p>
+                      <p className="font-bold">{item?.postedBy?.userName}</p>
+                      <p>{item?.comment}</p>
                     </div>
                   </div>
                 ))}
@@ -154,7 +156,7 @@ function Detail() {
               <div className="flex flex-wrap mt-6 gap-3">
                 <Link href={`/user-profile/${user?._id}`}>
                   <img
-                    src={user.image}
+                    src={user?.image}
                     className="w-10 h-10 rounded-full cursor-pointer"
                     alt="user-profile"
                   />

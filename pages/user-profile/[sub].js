@@ -115,7 +115,6 @@ function Profile() {
                   No Picture Found
                 </div>
               )}
-              {console.log(picture)}
             </div>
           </div>
         </div>
