@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="flex bg-gray-50 md:flex-row flex-col h-screen transaction-height duration-75 ease-out">
       <Head>
-        <title>NextPix</title>
+        <title>ISI Share</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Homes />
