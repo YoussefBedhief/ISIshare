@@ -33,7 +33,7 @@ const Homes = () => {
   return (
     <div className="flex bg-gray-50 md:flex-row flex-col h-screen w-full transition-height duration-75 ease-out mt-2">
       <Head>
-        <title>NextPix</title>
+        <title>ISI-Share</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="hidden md:flex h-screen flex-initial">
