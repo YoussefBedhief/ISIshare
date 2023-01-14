@@ -9,9 +9,9 @@ function SideBar({ closeToggle }) {
   const { topic } = router.query
 
   const normalLink =
-    "flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize "
+    "flex items-center px-5 gap-3 text-gray-500 hover:text-red-500 transition-all duration-200 ease-in-out capitalize "
   const activeLink =
-    "flex items-center px-5 gap-3 font-extrabold border-r-2 border-black transition-all duration-200 ease-in-out capitalize "
+    "flex items-center px-5 gap-3 text-red-500 border-r-2 border-red-500 transition-all duration-200 ease-in-out capitalize "
   const handleCloseSidebar = () => {
     if (closeToggle) closeToggle(false)
   }
@@ -24,7 +24,7 @@ function SideBar({ closeToggle }) {
           className="flex px-5 gap-2 my-6 w-190 items-center"
           onClick={handleCloseSidebar}
         >
-          <Image src={Logo} alt="NextPix Logo" height="auto" width="auto" />
+          <Image src={Logo} alt="Logo" height="auto" width="auto" />
         </Link>
         <div className="flex flex-col gap-5">
           <Link

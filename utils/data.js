@@ -1,16 +1,15 @@
 import { BsFillTelephoneFill, BsHddNetworkFill } from "react-icons/bs"
 import { FaRobot } from "react-icons/fa"
-import { GrPersonalComputer } from "react-icons/gr"
 import { GiDatabase, GiElectricalResistance } from "react-icons/gi"
 import { TbMath } from "react-icons/tb"
 import { ImEmbed } from "react-icons/im"
 import { FcElectronics } from "react-icons/fc"
-import { MdCategory, MdSecurity } from "react-icons/md"
+import { MdCategory, MdOutlineComputer, MdSecurity } from "react-icons/md"
 
 export const categories = [
   {
     name: "Computer Science",
-    icon: <GrPersonalComputer />,
+    icon: <MdOutlineComputer />,
   },
   {
     name: "Network",
