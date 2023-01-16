@@ -14,6 +14,7 @@ import { fetchUser } from "../utils/fetchUser"
 import { categories, userQuery } from "../utils/data"
 import Logo from "../assets/logo.png"
 import { useEffect } from "react"
+import Head from "next/head"
 
 function Upload() {
   const [toggleSidebar, setToggleSidebar] = useState(false)
@@ -95,6 +96,10 @@ function Upload() {
 
   return (
     <>
+      <Head>
+        <title>ISI-Share</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="flex bg-gray-50 md:flex-row flex-col h-screen w-full transition-height duration-75 ease-out mt-2">
         <div className="hidden md:flex h-screen flex-initial">
           <SideBar user={user && user} />
