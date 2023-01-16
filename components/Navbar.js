@@ -28,17 +28,17 @@ function Navbar({ user }) {
       <div className="flex justify-start items-center flex-grow px-2 rounded-md bg-white border-none outline-none focus-within:shadow-sm">
         <form
           onSubmit={handleSearch}
-          className="flex w-full justify-between items-center"
+          className="flex w-full justify-between items-center bg-slate-200 rounded-xl"
         >
           <input
             type="text"
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Search "
             value={searchValue}
-            className="p-2 w-full bg-white outline-none"
+            className="p-2 w-full outline-none bg-slate-200 rounded-xl placeholder:text-gray-900 placeholder:font-semibold"
           />
-          <button onClick={handleSearch}>
-            <HiSearch fontSize={21} className="ml-1" />
+          <button onClick={handleSearch} className="pr-2">
+            <HiSearch fontSize={21} className="ml-1 text-gray-900" />
           </button>
         </form>
       </div>
