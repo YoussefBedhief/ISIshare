@@ -26,11 +26,8 @@ function Log() {
     <div className="h-screen flex">
       <div className="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-blue-900 to-purple-600 i justify-around items-center hidden">
         <div>
-          <div className="p-5 mb-2">
-            <Image src={logo} width={400} height={400} alt="ISI-Share Logo" />
-          </div>
-          <h1 className="text-white font-bold text-4xl font-sans">
-            Cher étudiant
+          <h1 className="text-white font-bold text-6xl font-sans mb-5">
+            Cher étudiants
           </h1>
           <p className="text-white mt-1 text-xl">
             Veuillez respecter les instructions suivantes:
@@ -55,10 +52,10 @@ function Log() {
         <form className="bg-white text-center">
           <Image
             src={logo}
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             alt="ISI-Share Logo"
-            className="mb-1 md:hidden"
+            className="mb-5"
           />
           <h1 className="text-gray-800 font-bold text-2xl mb-1">Bonjour</h1>
           <p className="text-sm font-normal text-gray-600 mb-7">
