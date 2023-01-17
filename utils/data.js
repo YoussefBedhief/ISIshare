@@ -8,11 +8,11 @@ import { MdCategory, MdOutlineComputer, MdSecurity } from "react-icons/md"
 
 export const categories = [
   {
-    name: "Computer Science",
+    name: "Informatique",
     icon: <MdOutlineComputer />,
   },
   {
-    name: "Network",
+    name: "Réseau",
     icon: <BsHddNetworkFill />,
   },
   {
@@ -20,35 +20,35 @@ export const categories = [
     icon: <FaRobot />,
   },
   {
-    name: "Math",
+    name: "Mathématique",
     icon: <TbMath />,
   },
   {
-    name: "Electronic",
+    name: "Electronique",
     icon: <GiElectricalResistance />,
   },
   {
-    name: "Telecommunication",
+    name: "Télécommunication",
     icon: <BsFillTelephoneFill />,
   },
   {
-    name: "development",
+    name: "dévrloppement",
     icon: <ImEmbed />,
   },
   {
-    name: "Database",
+    name: "Base de données",
     icon: <GiDatabase />,
   },
   {
-    name: "Electronics",
+    name: "Embarquées",
     icon: <FcElectronics />,
   },
   {
-    name: "Security",
+    name: "Sécurités",
     icon: <MdSecurity />,
   },
   {
-    name: "Others",
+    name: "Autres",
     icon: <MdCategory />,
   },
 ]

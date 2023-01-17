@@ -16,7 +16,7 @@ import { MdDownloadForOffline } from "react-icons/md"
 import Layout from "../../components/Layout"
 import Head from "next/head"
 import { BiSend } from "react-icons/bi"
-import { AiOutlineComment } from "react-icons/ai"
+import { BsThreeDots } from "react-icons/bs"
 function Detail() {
   const [picture, setPicture] = useState(null)
   const [pictureDetails, setPictureDetails] = useState(null)
@@ -180,7 +180,7 @@ function Detail() {
                     onClick={addComment}
                   >
                     {addingComment ? (
-                      <AiOutlineComment className="text-2xl" />
+                      <BsThreeDots className="text-2xl" />
                     ) : (
                       <BiSend className="text-2xl" />
                     )}
