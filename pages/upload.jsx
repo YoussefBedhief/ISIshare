@@ -1,23 +1,17 @@
-import { useState } from "react"
-import Link from "next/link"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { client } from "../utils/client"
 import Spinner from "../components/Spinner"
 import Navbar from "../components/Navbar"
-import SideBar from "../components/SideBar"
 import { AiOutlineCloudUpload } from "react-icons/ai"
 import { MdDelete } from "react-icons/md"
-import { HiMenu } from "react-icons/hi"
-import { AiFillCloseCircle } from "react-icons/ai"
 import { fetchUser } from "../utils/fetchUser"
 import { categories, userQuery } from "../utils/data"
-import Logo from "../assets/logo.png"
-import { useEffect } from "react"
 import Head from "next/head"
+import Layout from "../components/Layout"
 
 function Upload() {
-  const [toggleSidebar, setToggleSidebar] = useState(false)
   const [user, setUser] = useState(null)
   const [imageAssets, setImageAssets] = useState(null)
   const [title, setTitle] = useState("")
@@ -66,7 +60,7 @@ function Upload() {
     }
   }
   const savePicture = () => {
-    if (title && about && destination && imageAssets?._id && category) {
+    if (title && about && imageAssets?._id && category) {
       const doc = {
         _type: "Image",
         title,
@@ -101,35 +95,7 @@ function Upload() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex bg-gray-50 md:flex-row flex-col h-screen w-full transition-height duration-75 ease-out mt-2">
-        <div className="hidden md:flex h-screen flex-initial">
-          <SideBar user={user && user} />
-        </div>
-        <div className="flex md:hidden flex-row">
-          <div className="flex flex-row w-full justify-between items-center p-2 shadow-md">
-            <HiMenu
-              className="cursor-pointer"
-              fontSize={40}
-              onClick={() => {
-                setToggleSidebar(true)
-              }}
-            />
-            <Link href="/">
-              <Image src={Logo} alt="NextPix" height={50} width={150} />
-            </Link>
-          </div>
-          {toggleSidebar && (
-            <div className="fixed w-4/5 bg-white h-screen overflow-y-auto shadow-md z-10 animate-slide-in">
-              <div className="absolute w-full flex justify-end items-center p-2">
-                <AiFillCloseCircle
-                  fontSize={30}
-                  className="cursor-pointer"
-                  onClick={() => setToggleSidebar(false)}
-                />
-              </div>
-              <SideBar user={user && user} closeToggle={setToggleSidebar} />
-            </div>
-          )}
-        </div>
+        <Layout />
         <div className=" px-2 flex-1 h-screen w-full">
           <div className="bg-gray-50">
             <Navbar
@@ -141,14 +107,14 @@ function Upload() {
           <div className="flex flex-col items-center ">
             {fields && (
               <p className="text-red-500 mb-1 text-xl transition-all duration-150 ease-in">
-                Please fill in all the filelds.
+                Veuillez remplir tous les champs obligatoires
               </p>
             )}
             <div className="flex lg:flex-row flex-col justify-center items-center bg-white p-3 lg:p-5 w-full lg:w-4/5">
               <div className="bg-secondaryColor p-3 flex flex-0.7 w-full">
                 <div className="flex flex-col justify-center items-center border-2 border-dotted border-gray-300 p-3 w-full h-420">
-                  {loading && <Spinner />}
-                  {wrongImageType && <p>Wrong Image Type</p>}
+                  {loading && <Spinner message="Téléchargement de l'image" />}
+                  {wrongImageType && <p>Type d'image non supporté </p>}
                   {!imageAssets ? (
                     <label>
                       <div className="flex flex-col items-center justify-center h-full">
@@ -156,11 +122,13 @@ function Upload() {
                           <p className="font-bold text-2xl">
                             <AiOutlineCloudUpload fontSize={150} />
                           </p>
-                          <p className="text-lg">Click to upload your image</p>
+                          <p className="text-lg">
+                            Cliquer pour ajouter une image
+                          </p>
                         </div>
                         <p className="mt-23 text-gray-400 text-center">
-                          You need to use high-quality JPG, SVG, PNG, GIF or
-                          TIFF
+                          Utiliser une bonne qualité d'image de type JPG, SVG,
+                          PNG, GIF ou TIFF
                         </p>
                       </div>
                       <input
@@ -208,7 +176,7 @@ function Upload() {
                     htmlFor="title"
                     className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                   >
-                    Picture Title
+                    Titre
                   </label>
                 </div>
 
@@ -227,7 +195,7 @@ function Upload() {
                     htmlFor="about"
                     className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                   >
-                    About Picture
+                    Description
                   </label>
                 </div>
                 <div className="relative z-0 mb-6 w-full group">
@@ -245,7 +213,7 @@ function Upload() {
                     htmlFor="destination"
                     className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
                   >
-                    Picture URL
+                    Lien URL (optionnel)
                   </label>
                 </div>
                 <div className="flex flex-col">
@@ -256,7 +224,7 @@ function Upload() {
                       className="capitalize block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                     >
                       <option value="Other" className="bg-white ">
-                        Select a category
+                        Séléctionner la classe
                       </option>
                       {categories.map((category) => (
                         <option
@@ -276,7 +244,7 @@ function Upload() {
                       onClick={savePicture}
                       className="text-white bg-red-500 hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
                     >
-                      Save Picture
+                      Ajouter l'image
                     </button>
                   </div>
                 </div>

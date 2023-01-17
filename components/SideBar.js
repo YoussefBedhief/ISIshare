@@ -32,7 +32,7 @@ function SideBar({ closeToggle }) {
             className={!topic ? activeLink : normalLink}
             onClick={handleCloseSidebar}
           >
-            <AiFillHome /> Home
+            <AiFillHome /> Accueil
           </Link>
           <h3 className="mt-2 px-5 text-base 2xl:text-xl ">
             Discover our categories

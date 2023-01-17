@@ -7,6 +7,8 @@ import { allPictures, searchQuery, userQuery } from "../../utils/data"
 import Layout from "../../components/Layout"
 import Navbar from "../../components/Navbar"
 import { fetchUser } from "../../utils/fetchUser"
+import Head from "next/head"
+import { MdOutlineImageNotSupported } from "react-icons/md"
 
 function Search() {
   const [user, setUser] = useState(null)
@@ -41,15 +43,24 @@ function Search() {
 
   return (
     <div className="flex bg-gray-50 md:flex-row flex-col h-screen w-full transition-height duration-75 ease-out mt-2">
+      <Head>
+        <title>ISI-Share</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Layout />
       <div className=" px-2 flex-1 h-screen w-full">
         <div className="bg-gray-50">
           <Navbar user={user} />
         </div>
-        {loading && <Spinner message="Searching for Picture..." />}
+        {loading && <Spinner message="Recherche d'image..." />}
         {picture?.length !== 0 && <MasonryLayout pictures={picture} />}
         {picture?.length === 0 && searchTerm !== "" && !loading && (
-          <div className="mt-10 text-center text-xl ">No Pictures Found!</div>
+          <div className="mt-10 text-center text-xl">
+            Aucune image trouvée!
+            <p className="text-9xl mt-2 justify-center items-center flex">
+              <MdOutlineImageNotSupported />
+            </p>
+          </div>
         )}
       </div>
     </div>

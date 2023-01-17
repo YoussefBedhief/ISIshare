@@ -33,7 +33,7 @@ function Navbar({ user }) {
           <input
             type="text"
             onChange={(e) => setSearchValue(e.target.value)}
-            placeholder="Search "
+            placeholder="Recherche "
             value={searchValue}
             className="p-2 w-full outline-none bg-slate-200 rounded-xl placeholder:text-gray-900 placeholder:font-semibold"
           />
@@ -55,7 +55,7 @@ function Navbar({ user }) {
         <Link href="/upload">
           <button className="border-2 px-2 md:px-4 text-md font-semibold flex items-center gap-2">
             <IoMdAdd className="text-xl" />{" "}
-            <span className="hidden md:block">Upload </span>
+            <span className="hidden md:block">Ajouter</span>
           </button>
         </Link>
         <Link href="/login">

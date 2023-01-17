@@ -14,6 +14,9 @@ import Image from "next/image"
 import Navbar from "../../components/Navbar"
 import { MdDownloadForOffline } from "react-icons/md"
 import Layout from "../../components/Layout"
+import Head from "next/head"
+import { BiSend } from "react-icons/bi"
+import { AiOutlineComment } from "react-icons/ai"
 function Detail() {
   const [picture, setPicture] = useState(null)
   const [pictureDetails, setPictureDetails] = useState(null)
@@ -70,10 +73,14 @@ function Detail() {
   }
 
   if (!pictureDetails) {
-    return <Spinner message="Loading the picture details..." />
+    return <Spinner message="Chargement des détails de l'image..." />
   } else {
     return (
       <>
+        <Head>
+          <title>ISI-Share</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
         <div className="flex bg-gray-50 md:flex-row flex-col h-screen w-full transition-height duration-75 ease-out mt-2">
           <Layout />
           <div className=" px-2 flex-1 h-screen w-full">
@@ -133,7 +140,7 @@ function Detail() {
                     {pictureDetails?.postedBy?.userName}
                   </p>
                 </Link>
-                <h2 className="mt-5 text-2xl">Comments</h2>
+                <h2 className="mt-5 text-2xl">Laisser un commentaire</h2>
                 <div className="max-h-370 overflow-y-auto">
                   {pictureDetails?.comment?.map((item) => (
                     <div
@@ -163,16 +170,20 @@ function Detail() {
                   <input
                     className=" flex-1 border-gray-100 outline-none border-2 p-2 rounded-2xl focus:border-gray-300"
                     type="text"
-                    placeholder="Add a comment"
+                    placeholder="Commenter ici"
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
                   />
                   <button
                     type="button"
-                    className="bg-red-500 text-white rounded-full px-6 py-2 font-semibold text-base outline-none"
+                    className="bg-red-500 text-white rounded-full px-3 py-2 font-semibold text-base outline-none"
                     onClick={addComment}
                   >
-                    {addingComment ? "Doing..." : "Done"}
+                    {addingComment ? (
+                      <AiOutlineComment className="text-2xl" />
+                    ) : (
+                      <BiSend className="text-2xl" />
+                    )}
                   </button>
                 </div>
               </div>

@@ -11,11 +11,13 @@ import {
 } from "../../utils/data"
 import Layout from "../../components/Layout"
 import Navbar from "../../components/Navbar"
+import Head from "next/head"
+import { MdOutlineImageNotSupported } from "react-icons/md"
 
 const activeBtnStyles =
-  "bg-red-500 text-white font-bold p-2 rounded-full w-20 outline-none"
+  "bg-red-500 text-white font-bold p-2 rounded-full w-25 outline-none"
 const notActiveBtnStyles =
-  "bg-primary mr-4 text-black font-bold p-2 rounded-full w-20 outline-none"
+  "bg-primary mr-4 text-black font-bold p-2 rounded-full w-25 outline-none"
 
 function Profile() {
   const [user, setUser] = useState(null)
@@ -49,10 +51,14 @@ function Profile() {
   }, [text, userId])
 
   if (!user) {
-    return <Spinner message="Loading profile..." />
+    return <Spinner message="Chargement du profil..." />
   }
   return (
     <div className="flex bg-gray-50 md:flex-row flex-col h-screen w-full transition-height duration-75 ease-out mt-2">
+      <Head>
+        <title>ISI-Share</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Layout />
       <div className=" px-2 flex-1 h-screen w-full">
         <div className="bg-gray-50">
@@ -93,7 +99,7 @@ function Profile() {
                   activeBtn === "created" ? activeBtnStyles : notActiveBtnStyles
                 }`}
               >
-                Created
+                Créé
               </button>
               <button
                 type="button"
@@ -105,15 +111,18 @@ function Profile() {
                   activeBtn === "saved" ? activeBtnStyles : notActiveBtnStyles
                 }`}
               >
-                Saved
+                Enregistrée
               </button>
             </div>
             <div className="px-2">
               {picture?.length ? (
                 <MasonryLayout pictures={picture} />
               ) : (
-                <div className="flex justify-center font-bold items-center w-full text-xl mt-2">
-                  No Picture Found
+                <div className="font-bold w-full text-xl mt-2 text-center">
+                  Aucune image trouvée
+                  <p className="text-9xl mt-2 flex justify-center items-center">
+                    <MdOutlineImageNotSupported />
+                  </p>
                 </div>
               )}
             </div>
