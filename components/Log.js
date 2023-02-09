@@ -27,14 +27,14 @@ function Log() {
       <div className="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-blue-900 to-purple-600 i justify-around items-center hidden">
         <div>
           <h1 className="text-white font-bold text-6xl font-sans mb-5">
-            Cher étudiants
+            Chers étudiants
           </h1>
           <p className="text-white mt-1 text-xl">
             Veuillez respecter les instructions suivantes:
           </p>
           <ul className="list-disc">
             <li className="text-white mt-1 mr-2">
-              Connecter vous avec votre adresse mail universitaire.
+              Connecter-vous avec votre adresse mail universitaire.
             </li>
             <li className="text-white mt-1 mr-2">
               Ajouter des images claires et lisibles.
