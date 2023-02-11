@@ -34,7 +34,7 @@ function Log() {
           </p>
           <ul className="list-disc">
             <li className="text-white mt-1 mr-2">
-              Connecter-vous avec votre adresse mail universitaire.
+              Connectez-vous avec votre adresse mail universitaire.
             </li>
             <li className="text-white mt-1 mr-2">
               Ajouter des images claires et lisibles.
