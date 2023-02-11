@@ -62,7 +62,7 @@ function Log() {
             Bienvenue à ISI-Share
           </p>
           <p className="text-sm font-normal text-gray-600 mb-7">
-            S'il vous plait respecter les instructions lister à gauche
+            S'il vous plait respecter les instructions listées à gauche
           </p>
 
           <div className="shadow-2xl bg-center flex justify-center items-center">
