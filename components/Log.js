@@ -43,7 +43,7 @@ function Log() {
               Respectez les autres membres de l'application.
             </li>
             <li className="text-white mt-1 mr-2">
-              Pas de commentaires insultants ou offensifs.
+              Ne publiez pas des commentaires insultants ou offensifs.
             </li>
           </ul>
         </div>
