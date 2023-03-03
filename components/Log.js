@@ -30,17 +30,17 @@ function Log() {
             Chers étudiants
           </h1>
           <p className="text-white mt-1 text-xl">
-            Veuillez respecter les instructions suivantes:
+            Veuillez respectez les instructions suivantes :
           </p>
           <ul className="list-disc">
             <li className="text-white mt-1 mr-2">
               Connectez-vous avec votre adresse mail universitaire.
             </li>
             <li className="text-white mt-1 mr-2">
-              Ajouter des images claires et lisibles.
+              Ajoutez des images claires et lisibles.
             </li>
             <li className="text-white mt-1 mr-2">
-              Respecter les autres membres de l'application.
+              Respectez les autres membres de l'application.
             </li>
             <li className="text-white mt-1 mr-2">
               Pas de commentaires insultants ou offensifs.
@@ -62,7 +62,7 @@ function Log() {
             Bienvenue à ISI-Share
           </p>
           <p className="text-sm font-normal text-gray-600 mb-7">
-            S'il vous plait respecter les instructions listées à gauche
+            S'il vous plait respectez les instructions listées à gauche
           </p>
 
           <div className="shadow-2xl bg-center flex justify-center items-center">
